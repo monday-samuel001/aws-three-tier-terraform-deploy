@@ -83,31 +83,22 @@ variable "zone_name" {
   default     = "example.com"
 }
 
+variable "cloudflare_zone_id" {
+  description = "Cloudflare Zone ID for samueltechspace.online"
+  type        = string
+  default     = "4be5799914b5bb6eed7b3e24af796e2f" 
+}
+
 variable "domain-name" {
   description = "Domain name to be created"
   type        = string
-  default     = "myapp.example.com"
+  default     = "samueltechspace.online"
 }
 
-variable "namecheap_api_user" {
-  description = "Namecheap API user"
+variable "cloudflare_api_token" {
+  description = "Cloudflare API Token"
   type        = string
-  default     = "smartobi"
-}
-variable "namecheap_api_key" {
-  description = "Namecheap API key"
-  type        = string
-  default     = "a3ca57241b794d44b0fc3387ca9b62a9"
-}
-variable "namecheap_username" {
-  description = "Namecheap username"
-  type        = string
-  default     = "smartobi"
-}
-variable "namecheap_client_ip" {
-  description = "Client IP for Namecheap API access"
-  type        = string
-  default     = "3.101.24.8" # Replace with your actual client IP
+  sensitive   = true
 }
 
 #===========
@@ -164,5 +155,5 @@ variable "repository_name" {
 variable "email" {
   description = "Email address for notifications and certificates"
   type        = string
-  default     = "support@digitalwitchng.online"
+  default     = "mondaysammy2005@gmail.com"
 }

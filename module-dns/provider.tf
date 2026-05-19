@@ -1,8 +1,8 @@
 terraform {
   required_providers {
-    namecheap = {
-      source = "namecheap/namecheap"
-      version = ">= 2.0.0"
+    cloudflare = {
+      source  = "cloudflare/cloudflare"
+      version = "~> 4.0"
     }
   }
 }

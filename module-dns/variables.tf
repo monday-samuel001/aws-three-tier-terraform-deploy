@@ -13,3 +13,6 @@ variable "nginx_ingress_load_balancer_hostname" {
   description = "Hostname of the NGINX Ingress Load Balancer"
   type        = string
 }
+variable "cloudflare_zone_id" {
+  type = string
+}
