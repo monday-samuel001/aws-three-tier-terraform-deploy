@@ -3,7 +3,7 @@ name: Deploy to AWS with Terraform
 on:
   push:
     branches:
-      - feature/man-dns
+      - main
 permissions:
     contents: write
     id-token: write
@@ -36,8 +36,6 @@ jobs:
         uses: hashicorp/setup-terraform@v1
         with:
             cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
-
-
 
       - name: 'Install tfsec for security scanning'
         run: |
