@@ -33,9 +33,9 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
             # Removed role-to-assume as requested
       - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v1
+        uses: hashicorp/setup-terraform@v3
         with:
-            cli_config_credentials_token: ${{ secrets.TF_API_TOKEN }}
+            terraform_wrapper: false
 
       - name: 'Install tfsec for security scanning'
         run: |
