@@ -67,8 +67,15 @@ jobs:
         run: terraform plan
 
 
-      # - name: Terraform Apply.
-      #   run: terraform apply -auto-approve 
+      - name: 'Terraform Apply'
+        env:
+          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_REGION: 'us-east-1'
+        run: terraform apply -auto-approve
+ 
 
         ## Note this part depends on the mannaul Dns route 53 to namecheap or godaddy setup.
         #===================================================================================
@@ -81,7 +88,7 @@ jobs:
       # - name: 'authenticate to EKS Cluster'
       #   run: aws eks update-kubeconfig --name ${{ vars.EKS_CLUSTER_NAME }} --region us-east-1
       
-      
+
       # - name: 'Deploying the ClusterIssuer to EKS'
       #   run: kubectl apply -f ClusterIssuer.yaml
 
