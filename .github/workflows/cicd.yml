@@ -95,18 +95,15 @@ jobs:
       # - name: 'Deploying argocd ingress rule to EKS'
       #   run: kubectl apply -f ingress-argocd.yaml -n argocd
 
-<<<<<<< HEAD
       #- name: Terraform Destroy
       #  run: terraform destroy -auto-approve 
-=======
-      - name: 'Terraform Destroy'
-        env:
+      # - name: 'Terraform Destroy'
+        #env:
           # You must pass the token and ID here too!
-          TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
-          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
-          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          AWS_REGION: 'us-east-1'
-        run: terraform destroy -auto-approve
+          #TF_VAR_cloudflare_api_token: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          #TF_VAR_cloudflare_zone_id: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+          #AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          #AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          #AWS_REGION: 'us-east-1'
+        #run: terraform destroy -auto-approve
 
->>>>>>> ad3395d066b8088de26d9a93b3200e61ce2c8535

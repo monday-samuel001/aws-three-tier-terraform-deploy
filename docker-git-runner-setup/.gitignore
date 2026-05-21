@@ -2,4 +2,3 @@
 docker-git-runner-setup/.env
 docker-git-runner-setup/.gitignore
 .gitignore
-.env
